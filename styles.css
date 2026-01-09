@@ -7,7 +7,7 @@
   --text:#f3f4f6;
   --radius:16px;
   --glass-blur:8px;
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  --shadow: 0 8px 30px rgba(230, 230, 230, 0.3);
   --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
   --max-width:1100px;
 }
@@ -43,10 +43,15 @@ body{
   font-size:40px;
   letter-spacing:-0.2px;
 }
-.tagline{
+.tagline1{
   margin:8px 0 0;
   color:var(--muted);
-  font-size:13px;
+  font-size:16px;
+}
+.tagline2{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:12px;
 }
 
 /* Grid of cards */
