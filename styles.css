@@ -17,7 +17,7 @@ html,body{height:100%}
 body{
   margin:0;
   font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui;
-  background: linear-gradient(180deg,var(--accent-start),var(--accent-end));
+  background: #0a0e27;
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -40,7 +40,7 @@ body{
 .site-title{
   margin:0;
   font-weight:600;
-  font-size:20px;
+  font-size:48px;
   letter-spacing:-0.2px;
 }
 .tagline{
