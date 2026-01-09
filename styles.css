@@ -31,11 +31,17 @@ body{
   background: linear-gradient(180deg, rgba(20,20,20,0.6), rgba(15,15,15,0.45));
   border-bottom: 1px solid rgba(255,255,255,0.05);
   box-shadow: var(--shadow);
+  padding: 0; /* allow inner container to control horizontal spacing */
 }
+
+.topbar .container{
+  padding:28px 20px; /* match page content horizontal padding */
+}
+
 .container{
   max-width:var(--max-width);
   margin:0 auto;
-  padding:28px 0px;
+  padding:28px 20px;
 }
 .site-title{
   margin:0;
