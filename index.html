@@ -123,13 +123,60 @@
     </footer>
   </main>
 
+  <!-- Video Player Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-content">
+      <button class="video-modal-close" id="closeVideoBtn" aria-label="Close video">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="video-container">
+        <iframe id="videoPlayer" width="100%" height="100%" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // Small enhancement: keyboard shortcut "/" focuses the page search if added later.
-    // Placeholder for future dynamic features.
-    document.addEventListener('keydown', (e) => {
-      if (e.key === '/' && !/input|textarea/i.test(document.activeElement.tagName)) {
+    // Video player overlay functionality
+    const videoModal = document.getElementById('videoModal');
+    const videoPlayer = document.getElementById('videoPlayer');
+    const closeVideoBtn = document.getElementById('closeVideoBtn');
+    const tiles = document.querySelectorAll('.tile');
+
+    tiles.forEach(tile => {
+      tile.addEventListener('click', (e) => {
         e.preventDefault();
-        // future: focus search field
+        const youtubeUrl = tile.getAttribute('href');
+        const videoId = youtubeUrl.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/)[1];
+        const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        videoPlayer.src = embedUrl;
+        videoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    closeVideoBtn.addEventListener('click', () => {
+      videoModal.classList.remove('active');
+      videoPlayer.src = '';
+      document.body.style.overflow = '';
+    });
+
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) {
+        videoModal.classList.remove('active');
+        videoPlayer.src = '';
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+        videoModal.classList.remove('active');
+        videoPlayer.src = '';
+        document.body.style.overflow = '';
       }
     });
   </script>
