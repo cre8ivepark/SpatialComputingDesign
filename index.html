@@ -17,28 +17,42 @@
 
   <main class="container">
     <section class="grid">
-      <!-- 비디오 영상 -->
-      <article class="card">
-        <h2 class="card-title">비디오 영상</h2>
-        <p class="card-desc">책에서 소개된 핵심 컨셉의 영상</p>
-        <ul class="link-list">
-          <li><a href="https://example.com/video1" target="_blank" rel="noopener">Scene Understanding - 공간 이해</a></li>
-          <li><a href="https://example.com/video2" target="_blank" rel="noopener">Spatial Mapping - 공간 매핑</a></li>
-          <li><a href="https://example.com/video3" target="_blank" rel="noopener">Tag-Along - 태그 얼롱</a></li>
-          <li><a href="https://example.com/video1" target="_blank" rel="noopener">Scene Understanding - 공간 이해</a></li>
-          <li><a href="https://example.com/video2" target="_blank" rel="noopener">Spatial Mapping - 공간 매핑</a></li>
-          <li><a href="https://example.com/video3" target="_blank" rel="noopener">Tag-Along - 태그 얼롱</a></li>
-          <li><a href="https://example.com/video1" target="_blank" rel="noopener">Scene Understanding - 공간 이해</a></li>
-          <li><a href="https://example.com/video2" target="_blank" rel="noopener">Spatial Mapping - 공간 매핑</a></li>
-          <li><a href="https://example.com/video3" target="_blank" rel="noopener">Tag-Along - 태그 얼롱</a></li>
-          <li><a href="https://example.com/video1" target="_blank" rel="noopener">Scene Understanding - 공간 이해</a></li>
-          <li><a href="https://example.com/video2" target="_blank" rel="noopener">Spatial Mapping - 공간 매핑</a></li>
-          <li><a href="https://example.com/video3" target="_blank" rel="noopener">Tag-Along - 태그 얼롱</a></li>
-          <li><a href="https://example.com/video1" target="_blank" rel="noopener">Scene Understanding - 공간 이해</a></li>
-          <li><a href="https://example.com/video2" target="_blank" rel="noopener">Spatial Mapping - 공간 매핑</a></li>
-          <li><a href="https://example.com/video3" target="_blank" rel="noopener">Tag-Along - 태그 얼롱</a></li>
-        </ul>
-      </article>
+    </section>
+
+    <!-- Video tiles section (full-width) -->
+    <section class="section container">
+      <h2 class="section-heading">비디오 영상</h2>
+      <p class="section-sub">책에서 소개된 핵심 컨셉의 영상</p>
+
+      <div class="tiles">
+        <a class="tile" href="https://example.com/video1" target="_blank" rel="noopener">
+          <div class="thumb" style="background-image: url('https://picsum.photos/seed/video1/800/450')" aria-hidden="true"></div>
+          <div class="tile-title">Scene Understanding - 공간 이해</div>
+        </a>
+        <a class="tile" href="https://example.com/video2" target="_blank" rel="noopener">
+          <div class="thumb" style="background-image: url('https://picsum.photos/seed/video2/800/450')" aria-hidden="true"></div>
+          <div class="tile-title">Spatial Mapping - 공간 매핑</div>
+        </a>
+        <a class="tile" href="https://example.com/video3" target="_blank" rel="noopener">
+          <div class="thumb" style="background-image: url('https://picsum.photos/seed/video3/800/450')" aria-hidden="true"></div>
+          <div class="tile-title">Tag-Along - 태그 얼롱</div>
+        </a>
+        <a class="tile" href="https://example.com/video4" target="_blank" rel="noopener">
+          <div class="thumb" style="background-image: url('https://picsum.photos/seed/video4/800/450')" aria-hidden="true"></div>
+          <div class="tile-title">Spatial UI Patterns - 공간 UI 패턴</div>
+        </a>
+        <a class="tile" href="https://example.com/video5" target="_blank" rel="noopener">
+          <div class="thumb" style="background-image: url('https://picsum.photos/seed/video5/800/450')" aria-hidden="true"></div>
+          <div class="tile-title">Anchoring & Tracking - 앵커링과 트래킹</div>
+        </a>
+        <a class="tile" href="https://example.com/video6" target="_blank" rel="noopener">
+          <div class="thumb" style="background-image: url('https://picsum.photos/seed/video6/800/450')" aria-hidden="true"></div>
+          <div class="tile-title">Interaction Design - 인터랙션 디자인</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="grid">
 
       <!-- 유용한 툴 및 소프트웨어 -->
       <article class="card">
@@ -76,7 +90,6 @@
     </section>
 
     <footer class="footer">
-      <p>Tip: 편집하려면 이 파일을 깃허브에서 수정하거나 새로운 링크 항목을 추가하세요.</p>
       <p class="muted">© Spatial Computing Design</p>
     </footer>
   </main>

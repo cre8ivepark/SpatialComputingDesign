@@ -59,8 +59,63 @@ body{
   .grid{grid-template-columns: repeat(2,1fr)}
 }
 @media(min-width:1150px){
-  .grid{grid-template-columns: repeat(4,1fr)}
+  .grid{grid-template-columns: repeat(3,1fr)}
 }
+
+/* Section headings for full-width sections */
+.section{
+  padding: 10px 20px 26px;
+  max-width:var(--max-width);
+  margin: 18px auto 6px;
+}
+.section-heading{
+  font-size:20px;
+  margin:6px 0 6px;
+  font-weight:700;
+}
+.section-sub{
+  color:var(--muted);
+  margin:0 0 14px 0;
+  font-size:13px;
+}
+
+/* Tiles grid for video thumbnails */
+.tiles{
+  display:grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap:18px;
+}
+@media(min-width:700px){
+  .tiles{grid-template-columns: repeat(2, 1fr)}
+}
+@media(min-width:1100px){
+  .tiles{grid-template-columns: repeat(3, 1fr)}
+}
+
+.tile{
+  display:block;
+  background: var(--card);
+  border-radius:12px;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  box-shadow: var(--shadow);
+  transition: transform .18s, box-shadow .18s;
+}
+.tile:hover{transform: translateY(-6px); box-shadow: var(--shadow-elev)}
+
+.thumb{
+  width:100%;
+  aspect-ratio: 16 / 9;
+  background-size:cover;
+  background-position:center;
+}
+.tile-title{
+  padding:12px 14px;
+  font-weight:600;
+  font-size:15px;
+}
+
 
 .card{
   background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.82));
