@@ -39,7 +39,7 @@ body{
 }
 .site-title{
   margin:0;
-  font-weight:600;
+  font-weight:900;
   font-size:40px;
   letter-spacing:-0.2px;
 }
@@ -191,10 +191,15 @@ body{
 a {
   color: var(--text);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:visited {
   color: var(--text);
+}
+
+a:hover {
+  color: #0171c6;
 }
 
 /* Footer */
