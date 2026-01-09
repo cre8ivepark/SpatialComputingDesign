@@ -31,39 +31,30 @@ body{
   background: linear-gradient(180deg, rgba(20,20,20,0.6), rgba(15,15,15,0.45));
   border-bottom: 1px solid rgba(255,255,255,0.05);
   box-shadow: var(--shadow);
-  border-left: 4px solid #ff4444;
 }
-
-.topbar .container{
-  padding:32px 20px;
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:28px 0px;
 }
-
 .site-title{
   margin:0;
   font-weight:900;
   font-size:40px;
   letter-spacing:-0.2px;
-  line-height:1.2;
 }
 .tagline1{
-  margin:12px 0 0;
+  margin:8px 0 0;
   color:var(--muted);
-  font-size:13px;
-  line-height:1.5;
+  font-size:16px;
 }
 .tagline2{
-  margin:6px 0 0;
+  margin:8px 0 0;
   color:var(--muted);
   font-size:12px;
-  line-height:1.5;
 }
 
-/* General container */
-.container{
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:28px 20px;
-}
+/* Grid of cards */
 .grid{
   display:grid;
   grid-template-columns: repeat(1,1fr);
