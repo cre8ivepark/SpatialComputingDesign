@@ -187,6 +187,16 @@ body{
   background:linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
 }
 
+/* Override href link colors globally */
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--text);
+}
+
 /* Footer */
 .footer{
   margin-top:28px;
