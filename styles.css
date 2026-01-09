@@ -17,7 +17,7 @@ html,body{height:100%}
 body{
   margin:0;
   font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui;
-  background: #0a0e27;
+  background: #30313c;
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
