@@ -87,23 +87,26 @@ body{
   margin-bottom: 26px;
 }
 .section .container{
-  padding: 0 0px 26px;
+  padding: 0 12px 26px;
 }
 .section-heading{
   font-size:20px;
   margin:6px 0 6px;
   font-weight:700;
+  padding:0 12px;
 }
 .section-sub{
   color:var(--muted);
   margin:0 0 14px 0;
   font-size:13px;
+  padding:0 12px;
 }
 .subsection-heading{
   font-size:15px;
   margin:24px 0 14px 0;
   font-weight:600;
   color:var(--text);
+  padding:0 12px;
 }
 
 /* Tiles grid for video thumbnails */
@@ -211,6 +214,8 @@ a:hover {
 /* Footer */
 .footer{
   margin-top:28px;
+  margin-left:12px;
+  margin-right:12px;
   padding:18px;
   border-radius:12px;
   background:transparent;
