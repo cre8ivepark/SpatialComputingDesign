@@ -60,6 +60,29 @@ body{
   font-size:12px;
 }
 
+.book-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 10px;
+  margin-top:12px;
+  font-size:13px;
+}
+
+.book-links span{
+  color:var(--muted);
+  margin-right:2px;
+}
+
+.book-links a{
+  color:#dbeafe;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+
+.book-links a:hover{
+  color:#7dd3fc;
+}
+
 /* Grid of cards */
 .grid{
   display:grid;
