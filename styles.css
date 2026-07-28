@@ -7,7 +7,7 @@
   --text:#f3f4f6;
   --radius:16px;
   --glass-blur:8px;
-  --shadow: 0 8px 30px rgba(230, 230, 230, 0.3);
+  --shadow: none;
   --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
   --max-width:1100px;
 }
@@ -17,7 +17,12 @@ html,body{height:100%}
 body{
   margin:0;
   font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui;
-  background: #222E64;
+  background-color: #222E64;
+  background-image: url("Background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
