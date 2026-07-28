@@ -24,6 +24,42 @@
   </header>
 
   <main class="container">
+    <section class="section interactive-section" aria-labelledby="interactive-viewer-heading">
+      <div class="container">
+        <h2 class="section-heading" id="interactive-viewer-heading">인터랙티브 3D 뷰어</h2>
+        <p class="section-sub">책에서 소개된 다양한 공간 인터랙션 개념 들의 실시간 3D 애니메이션</p>
+      </div>
+
+      <div class="container">
+        <div class="tiles">
+          <a class="tile viewer-tile" href="./interactive/angular-scaling.html" data-viewer-title="고정 각 크기 조절">
+            <div class="thumb viewer-thumb viewer-thumb-angular" aria-hidden="true">
+              <span class="viewer-badge">3D</span>
+            </div>
+            <div class="tile-title">고정 각 크기 조절 (Angular Scaling)</div>
+          </a>
+          <a class="tile viewer-tile" href="./interactive/head-tracking.html" data-viewer-title="Head-locked UI vs Leashed UI">
+            <div class="thumb viewer-thumb viewer-thumb-tracking" aria-hidden="true">
+              <span class="viewer-badge">3D</span>
+            </div>
+            <div class="tile-title">Head-locked UI vs Leashed UI</div>
+          </a>
+          <a class="tile viewer-tile" href="./interactive/billboarding.html" data-viewer-title="빌보딩">
+            <div class="thumb viewer-thumb viewer-thumb-billboarding" aria-hidden="true">
+              <span class="viewer-badge">3D</span>
+            </div>
+            <div class="tile-title">빌보딩 (Billboarding)</div>
+          </a>
+          <a class="tile viewer-tile" href="./interactive/tag-along.html" data-viewer-title="태그 얼롱">
+            <div class="thumb viewer-thumb viewer-thumb-tag-along" aria-hidden="true">
+              <span class="viewer-badge">3D</span>
+            </div>
+            <div class="tile-title">태그 얼롱 (Tag-Along)</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Video tiles section (full-width) -->
     <section class="section">
       <div class="container">
@@ -200,18 +236,35 @@
     </div>
   </div>
 
+  <div class="viewer-modal" id="viewerModal" aria-hidden="true">
+    <div class="viewer-modal-content">
+      <div class="viewer-modal-bar">
+        <strong id="viewerModalTitle">인터랙티브 3D 뷰어</strong>
+        <button class="viewer-modal-close" id="closeViewerBtn" aria-label="3D 뷰어 닫기">×</button>
+      </div>
+      <iframe
+        id="viewerFrame"
+        src=""
+        title="인터랙티브 3D 뷰어"
+        allow="fullscreen"
+      ></iframe>
+    </div>
+  </div>
+
   <script>
     // Video player overlay functionality
     const videoModal = document.getElementById('videoModal');
     const videoPlayer = document.getElementById('videoPlayer');
     const closeVideoBtn = document.getElementById('closeVideoBtn');
-    const tiles = document.querySelectorAll('.tile');
+    const videoTiles = document.querySelectorAll('.tile[href*="youtu.be"]');
 
-    tiles.forEach(tile => {
+    videoTiles.forEach(tile => {
       tile.addEventListener('click', (e) => {
         e.preventDefault();
         const youtubeUrl = tile.getAttribute('href');
-        const videoId = youtubeUrl.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/)[1];
+        const match = youtubeUrl.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/);
+        if (!match) return;
+        const videoId = match[1];
         const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
         videoPlayer.src = embedUrl;
         videoModal.classList.add('active');
@@ -233,12 +286,44 @@
       }
     });
 
+    const viewerModal = document.getElementById('viewerModal');
+    const viewerFrame = document.getElementById('viewerFrame');
+    const viewerModalTitle = document.getElementById('viewerModalTitle');
+    const closeViewerBtn = document.getElementById('closeViewerBtn');
+    const viewerTiles = document.querySelectorAll('.viewer-tile');
+
+    const closeViewer = () => {
+      viewerModal.classList.remove('active');
+      viewerModal.setAttribute('aria-hidden', 'true');
+      viewerFrame.src = '';
+      document.body.style.overflow = '';
+    };
+
+    viewerTiles.forEach(tile => {
+      tile.addEventListener('click', (e) => {
+        e.preventDefault();
+        viewerFrame.src = tile.href;
+        viewerModalTitle.textContent = tile.dataset.viewerTitle;
+        viewerModal.classList.add('active');
+        viewerModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    closeViewerBtn.addEventListener('click', closeViewer);
+    viewerModal.addEventListener('click', (e) => {
+      if (e.target === viewerModal) closeViewer();
+    });
+
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && videoModal.classList.contains('active')) {
         videoModal.classList.remove('active');
         videoPlayer.src = '';
         document.body.style.overflow = '';
+      }
+      if (e.key === 'Escape' && viewerModal.classList.contains('active')) {
+        closeViewer();
       }
     });
   </script>
