@@ -238,10 +238,7 @@
 
   <div class="viewer-modal" id="viewerModal" aria-hidden="true">
     <div class="viewer-modal-content">
-      <div class="viewer-modal-bar">
-        <strong id="viewerModalTitle">인터랙티브 3D 뷰어</strong>
-        <button class="viewer-modal-close" id="closeViewerBtn" aria-label="3D 뷰어 닫기">×</button>
-      </div>
+      <button class="viewer-modal-close" id="closeViewerBtn" aria-label="3D 뷰어 닫기">×</button>
       <iframe
         id="viewerFrame"
         src=""
@@ -288,7 +285,6 @@
 
     const viewerModal = document.getElementById('viewerModal');
     const viewerFrame = document.getElementById('viewerFrame');
-    const viewerModalTitle = document.getElementById('viewerModalTitle');
     const closeViewerBtn = document.getElementById('closeViewerBtn');
     const viewerTiles = document.querySelectorAll('.viewer-tile');
 
@@ -303,7 +299,6 @@
       tile.addEventListener('click', (e) => {
         e.preventDefault();
         viewerFrame.src = tile.href;
-        viewerModalTitle.textContent = tile.dataset.viewerTitle;
         viewerModal.classList.add('active');
         viewerModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
