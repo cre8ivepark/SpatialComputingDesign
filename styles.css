@@ -188,6 +188,39 @@ body{
   background-position:center;
 }
 
+.tile[href*="youtu.be"] .thumb {
+  position:relative;
+}
+
+.tile[href*="youtu.be"] .thumb::before {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:64px;
+  height:64px;
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:50%;
+  background:rgba(0,0,0,.58);
+  box-shadow:0 6px 22px rgba(0,0,0,.28);
+  backdrop-filter:blur(4px);
+  transform:translate(-50%,-50%);
+}
+
+.tile[href*="youtu.be"] .thumb::after {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:calc(50% + 3px);
+  width:0;
+  height:0;
+  border-top:11px solid transparent;
+  border-bottom:11px solid transparent;
+  border-left:18px solid rgba(255,255,255,.92);
+  transform:translate(-50%,-50%);
+}
+
+
 .viewer-thumb{
   position:relative;
   display:flex;
